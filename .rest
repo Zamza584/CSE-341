@@ -1,0 +1,4 @@
+GET http://localhost:8000/ HTTP/1.1
+
+###
+GET http://localhost:8000/awesome HTTP/1.1
