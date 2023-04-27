@@ -14,8 +14,9 @@ POST http://localhost:8000/users
 Content-Type: application/json
 
 {
-    "firstName": "jim",
-    "lastName": "age"
+    "firstName": "jffssim",
+    "lastName": "age",
+    "year": 33
 }
 
 ### 
