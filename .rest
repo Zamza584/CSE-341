@@ -2,3 +2,21 @@ GET http://localhost:8000/ HTTP/1.1
 
 ###
 GET http://localhost:8000/awesome HTTP/1.1
+
+### 
+GET https://cse-341-yf6e.onrender.com/ HTTP/1.1
+
+###
+GET https://cse-341-yf6e.onrender.com/awesome HTTP/1.1
+
+###
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "firstName": "jim",
+    "lastName": "age"
+}
+
+### 
+GET http://localhost:8000/users HTTP/1.1
