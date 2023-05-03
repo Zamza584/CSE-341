@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 //get all users
 router.get("/", async (req, res) => {
   try {
-    const allUsers = await userSchema.find()
+    const allUsers = await userSchema.find();
     res.json(allUsers);
   } catch (err) {
     res.status(400).json({ message: err.message });

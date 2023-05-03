@@ -17,7 +17,7 @@ router.get("/:id", async (req, res) => {
     const contact = await contactSchema.findById(id);
     res.json(contact);
   } catch (err) {
-    res.status(400).json({message: err.message});
+    res.status(400).json({ message: err.message });
   }
 });
 
