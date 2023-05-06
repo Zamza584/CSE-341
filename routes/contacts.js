@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
   const contact = contactSchema(req.body);
   try {
     const data = await contact.save();
-    res.json(data);
+    res.status(201).json(data);
   } catch (err) {
     res.json({ message: err });
   }
@@ -37,7 +37,7 @@ router.put("/:id", async (req, res) => {
     const data = await contactSchema.updateOne({ _id: id }, { $set: body });
     res.json(data);
   } catch (err) {
-    res.json({ message: err });
+    res.status(204).json({ message: err });
   }
 });
 
