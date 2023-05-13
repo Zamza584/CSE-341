@@ -34,16 +34,16 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  // #swagger.tags = ['Contacts']
-  // #swagger.summary = "create a contact"
-  /* #swagger.parameters['body'] = {
+  const contact = contactSchema(req.body);
+  try {
+    // #swagger.tags = ['Contacts']
+    // #swagger.summary = "create a contact"
+    /* #swagger.parameters['req.body'] = {
         in: "body",
         description: "Data needed to create a contact",
         schema: { $ref: '#/definitions/contacts' }
      } 
   */
-  const contact = contactSchema(req.body);
-  try {
     const data = await contact.save();
     res.status(201).json(data);
   } catch (err) {

@@ -11,6 +11,7 @@
       "description": "local server"
     }
   ],
+  "basePath": "",
   "paths": {
     "/": {
       "get": {
@@ -211,25 +212,59 @@
       "contacts": {
         "type": "object",
         "properties": {
-          "firstName": {
+          "type": {
             "type": "string",
-            "example": "<String>"
+            "example": "object"
           },
-          "lastName": {
-            "type": "string",
-            "example": "<String>"
-          },
-          "email": {
-            "type": "string",
-            "example": "<String>"
-          },
-          "favoriteColor": {
-            "type": "string",
-            "example": "<String>"
-          },
-          "birthday": {
-            "type": "string",
-            "example": "<String>"
+          "properties": {
+            "type": "object",
+            "properties": {
+              "firstName": {
+                "type": "object",
+                "properties": {
+                  "example": {
+                    "type": "string",
+                    "example": "<String>"
+                  }
+                }
+              },
+              "lastName": {
+                "type": "object",
+                "properties": {
+                  "example": {
+                    "type": "string",
+                    "example": "<String>"
+                  }
+                }
+              },
+              "email": {
+                "type": "object",
+                "properties": {
+                  "example": {
+                    "type": "string",
+                    "example": "<String>"
+                  }
+                }
+              },
+              "favoriteColor": {
+                "type": "object",
+                "properties": {
+                  "example": {
+                    "type": "string",
+                    "example": "<String>"
+                  }
+                }
+              },
+              "birthday": {
+                "type": "object",
+                "properties": {
+                  "example": {
+                    "type": "string",
+                    "example": "<String>"
+                  }
+                }
+              }
+            }
           }
         }
       },
