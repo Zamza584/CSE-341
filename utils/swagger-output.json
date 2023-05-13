@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "My API",
-    "description": "Description",
+    "title": "My API CSE-341",
+    "description": "Api used for our CSE 341 class",
     "version": "1.0.0"
   },
   "servers": [
@@ -79,7 +79,11 @@
     },
     "/contacts/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "all contacts",
+        "description": "Used to get all contacts from mongodb",
         "parameters": [],
         "responses": {
           "200": {
@@ -92,10 +96,20 @@
       },
       "post": {
         "tags": [
-          "Contacts "
+          "Contacts"
         ],
+        "summary": "create a contact",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "description": "Data needed to create a contact",
+            "schema": {
+              "$ref": "#/components/schemas/contacts"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -109,8 +123,9 @@
     "/contacts/{id}": {
       "get": {
         "tags": [
-          "Contacts "
+          "Contacts"
         ],
+        "summary": "search by id",
         "description": "",
         "parameters": [
           {
@@ -118,8 +133,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "example": "insert id"
+            },
+            "description": "Insert user id here to get data"
           }
         ],
         "responses": {
@@ -132,6 +149,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "update a contact",
         "description": "",
         "parameters": [
           {
@@ -140,6 +161,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            },
+            "description": "Id of the contact"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Data needed to update a contact",
+            "schema": {
+              "$ref": "#/components/schemas/updateContacts"
             }
           }
         ],
@@ -153,6 +183,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "delete a contact",
         "description": "",
         "parameters": [
           {
@@ -177,28 +211,50 @@
       "contacts": {
         "type": "object",
         "properties": {
-          "type": {
+          "firstName": {
             "type": "string",
-            "example": "object"
+            "example": "<String>"
           },
-          "properties": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": "object",
-                "properties": {
-                  "_id": {
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "example": "String"
-                      }
-                    }
-                  }
-                }
-              }
-            }
+          "lastName": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "email": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "favoriteColor": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "birthday": {
+            "type": "string",
+            "example": "<String>"
+          }
+        }
+      },
+      "updateContacts": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "email": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "favoriteColor": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "birthday": {
+            "type": "string",
+            "example": "<String>"
           }
         }
       }
