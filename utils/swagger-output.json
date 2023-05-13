@@ -102,7 +102,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "body",
             "in": "body",
             "description": "Data needed to create a contact",
             "schema": {
