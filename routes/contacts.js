@@ -39,7 +39,6 @@ router.post("/", async (req, res) => {
   /* #swagger.parameters['body'] = {
         in: "body",
         description: "Data needed to create a contact",
-        type: "application/json",
         schema: { $ref: '#/definitions/contacts' }
      } 
   */
