@@ -2,6 +2,7 @@ const contactSchema = require("../DB/contactSchema");
 const router = require("express").Router();
 
 router.get("/", async (req, res) => {
+
   try {
     const allContacts = await contactSchema.find();
     res.json(allContacts);
@@ -11,6 +12,8 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
+  // #swagger.tags = ['Contacts ']
+
   try {
     const { id } = req.params;
     const contact = await contactSchema.findById(id);
@@ -21,6 +24,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  // #swagger.tags = ['Contacts ']
   const contact = contactSchema(req.body);
   try {
     const data = await contact.save();

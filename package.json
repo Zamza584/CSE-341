@@ -5,7 +5,8 @@
     "mongodb": "^5.3.0",
     "mongoose": "^7.0.5",
     "node": "^19.8.1",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "swagger-ui-express": "^4.6.3"
   },
   "name": "cse-341",
   "version": "1.0.0",
@@ -15,7 +16,8 @@
     "start": "nodemon server.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
+    "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
+    "swagger-autogen": "node ./utils/swagger.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +26,7 @@
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "swagger-autogen": "^2.23.1"
   }
 }
