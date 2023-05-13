@@ -17,7 +17,7 @@ const doc = {
     }
   ],
   host: "cse-341-yf6e.onrender.com",
-  basePath: "/",
+  basePath: "",
   schema: ["https"],
 
   definitions: {
