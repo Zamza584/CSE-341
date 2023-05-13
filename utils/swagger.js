@@ -12,11 +12,11 @@ const doc = {
   },
   servers: [
     {
-      url: "https://cse-341-pr-3.onrender.com",
+      url: "https://cse-341-yf6e.onrender.com",
       description: "local server"
     }
   ],
-  host: "cse-341-pr-3.onrender.com",  
+  host: "cse-341-yf6e.onrender.com",  
   basePath: '/',
   schema: ["https"],
 
@@ -41,6 +41,6 @@ const endpointsFiles = ["./server.js"];
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
   require('../server.js'); // Your project's root file
-  console.log("api doc found at: https://cse-341-pr-3.onrender.com/api-docs/")
+  console.log("api doc found at: https://cse-341-yf6e.onrender.com/api-docs/")
 });
     
