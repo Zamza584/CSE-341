@@ -103,7 +103,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "body",
+            "name": "req.body",
             "in": "body",
             "description": "Data needed to create a contact",
             "schema": {
@@ -212,59 +212,25 @@
       "contacts": {
         "type": "object",
         "properties": {
-          "type": {
+          "firstName": {
             "type": "string",
-            "example": "object"
+            "example": "<String>"
           },
-          "properties": {
-            "type": "object",
-            "properties": {
-              "firstName": {
-                "type": "object",
-                "properties": {
-                  "example": {
-                    "type": "string",
-                    "example": "<String>"
-                  }
-                }
-              },
-              "lastName": {
-                "type": "object",
-                "properties": {
-                  "example": {
-                    "type": "string",
-                    "example": "<String>"
-                  }
-                }
-              },
-              "email": {
-                "type": "object",
-                "properties": {
-                  "example": {
-                    "type": "string",
-                    "example": "<String>"
-                  }
-                }
-              },
-              "favoriteColor": {
-                "type": "object",
-                "properties": {
-                  "example": {
-                    "type": "string",
-                    "example": "<String>"
-                  }
-                }
-              },
-              "birthday": {
-                "type": "object",
-                "properties": {
-                  "example": {
-                    "type": "string",
-                    "example": "<String>"
-                  }
-                }
-              }
-            }
+          "lastName": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "email": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "favoriteColor": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "birthday": {
+            "type": "string",
+            "example": "<String>"
           }
         }
       },
