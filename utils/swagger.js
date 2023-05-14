@@ -1,5 +1,4 @@
 const options = {
-  openapi: "3.0.0",
   autoBody: true
 };
 
@@ -10,13 +9,7 @@ const doc = {
     title: "My API CSE-341",
     description: "Api used for our CSE 341 class"
   },
-  servers: [
-    {
-      url: "https://cse-341-yf6e.onrender.com",
-      description: "local server"
-    }
-  ],
-  host: "cse-341-yf6e.onrender.com",
+  host: "localhost:8000/",
   basePath: "",
   schema: ["https"],
 
@@ -44,5 +37,5 @@ const endpointsFiles = ["./server.js"];
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
   require("../server.js"); // Your project's root file
-  console.log("api doc found at: https://cse-341-yf6e.onrender.com/api-docs/");
+  console.log("api doc found at: http://localhost:8000/api-docs/");
 });

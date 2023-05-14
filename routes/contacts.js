@@ -38,12 +38,15 @@ router.post("/", async (req, res) => {
   try {
     // #swagger.tags = ['Contacts']
     // #swagger.summary = "create a contact"
-    /* #swagger.parameters['req.body'] = {
+    /* #swagger.parameters['body'] = {
         in: "body",
         description: "Data needed to create a contact",
+        required: true,
+        type: "object",
         schema: { $ref: '#/definitions/contacts' }
      } 
-  */
+   */
+
     const data = await contact.save();
     res.status(201).json(data);
   } catch (err) {

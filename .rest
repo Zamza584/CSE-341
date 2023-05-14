@@ -5,7 +5,7 @@ GET https://cse-341-yf6e.onrender.com/contacts HTTP/1.1
 GET https://cse-341-yf6e.onrender.com/contacts/644de8a419bd2a197826b705 HTTP/1.1
 
 ### 
-POST https://cse-341-yf6e.onrender.com/contacts HTTP/1.1
+POST https://cse-341-yf6e.onrender.com/contacts/ HTTP/1.1
 Content-Type: application/json
 
 {
