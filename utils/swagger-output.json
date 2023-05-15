@@ -1,15 +1,21 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
+    "version": "1.0.0",
     "title": "My API CSE-341",
-    "description": "Api used for our CSE 341 class",
-    "version": "1.0.0"
+    "description": "Api used for our CSE 341 class"
   },
-  "host": "cse-341-yf6e.onrender.com/",
-  "basePath": "",
-  "schemes": [
-    "http"
+  "servers": [
+    {
+      "url": "http://localhost:8000/",
+      "description": "main server"
+    },
+    {
+      "url": "https://cse-341-yf6e.onrender.com/",
+      "description": "the other server"
+    }
   ],
+  "basePath": "",
   "paths": {
     "/": {
       "get": {
@@ -36,29 +42,30 @@
     "/users/": {
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
           },
           "400": {
             "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "example": "any"
+                  },
+                  "lastName": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -98,23 +105,29 @@
         ],
         "summary": "create a contact",
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Data needed to create a contact",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/contacts"
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
           },
           "201": {
             "description": "Created"
+          }
+        },
+        "requestBody": {
+          "description": "Data needed to create a contact",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/contacts"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/contacts"
+              }
+            }
           }
         }
       }
@@ -131,12 +144,11 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "String",
-            "description": "Insert user id here to get data",
             "schema": {
               "type": "string",
               "example": "insert id"
-            }
+            },
+            "description": "Insert user id here to get data"
           }
         ],
         "responses": {
@@ -159,7 +171,9 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Id of the contact"
           },
           {
@@ -167,7 +181,7 @@
             "in": "body",
             "description": "Data needed to update a contact",
             "schema": {
-              "$ref": "#/definitions/updateContacts"
+              "$ref": "#/components/schemas/updateContacts"
             }
           }
         ],
@@ -191,7 +205,9 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -202,54 +218,62 @@
       }
     }
   },
-  "definitions": {
-    "contacts": {
-      "type": "object",
-      "properties": {
-        "firstName": {
-          "type": "string",
-          "example": "any"
+  "components": {
+    "schemas": {
+      "contacts": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "email": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "favoriteColor": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "birthday": {
+            "type": "string",
+            "example": "<String>"
+          }
         },
-        "lastName": {
-          "type": "string",
-          "example": "any"
-        },
-        "email": {
-          "type": "string",
-          "example": "any"
-        },
-        "favoriteColor": {
-          "type": "string",
-          "example": "any"
-        },
-        "birthday": {
-          "type": "string",
-          "example": "any"
+        "xml": {
+          "name": "contacts"
         }
-      }
-    },
-    "updateContacts": {
-      "type": "object",
-      "properties": {
-        "firstName": {
-          "type": "string",
-          "example": "any"
+      },
+      "updateContacts": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "email": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "favoriteColor": {
+            "type": "string",
+            "example": "<String>"
+          },
+          "birthday": {
+            "type": "string",
+            "example": "<String>"
+          }
         },
-        "lastName": {
-          "type": "string",
-          "example": "any"
-        },
-        "email": {
-          "type": "string",
-          "example": "any"
-        },
-        "favoriteColor": {
-          "type": "string",
-          "example": "any"
-        },
-        "birthday": {
-          "type": "string",
-          "example": "any"
+        "xml": {
+          "name": "updateContacts"
         }
       }
     }
