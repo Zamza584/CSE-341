@@ -19,8 +19,7 @@ router.get("/:id", async (req, res) => {
   // #swagger.summary = "search by id"
   /* #swagger.parameters['id'] = {
         description: "Insert user id here to get data",
-        type: "String",
-        schema: "insert id"
+        type: "String"
      } 
   */
 
@@ -39,10 +38,9 @@ router.post("/", async (req, res) => {
     // #swagger.tags = ['Contacts']
     // #swagger.summary = "create a contact"
     /*	#swagger.requestBody = {
-
-        description: "Data needed to create a contact",
-            required: true,
-            schema: { $ref: "#/definitions/contacts" }
+          description: "Data needed to create a contact",
+          required: true,
+          schema: { $ref: "#/definitions/contacts" }
     } */
 
     const data = await contact.save();
@@ -59,12 +57,12 @@ router.put("/:id", async (req, res) => {
         in: 'path',
         description: "Id of the contact"
     }
-  /* #swagger.parameters['body'] = {
-        in: 'body',
-        description: "Data needed to update a contact",
-        type: "application/json",
-        schema: { $ref: '#/definitions/updateContacts' }
-     } 
+  */
+  /* #swagger.requestBody = {
+       description: "Data needed to update a contact",
+       required: true,
+       schema: { $ref: "#/definitions/updateContacts" }
+    } 
   */
   const { id } = req.params;
   const body = req.body;

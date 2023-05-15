@@ -7,11 +7,11 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8000/",
+      "url": "https://cse-341-yf6e.onrender.com/",
       "description": "main server"
     },
     {
-      "url": "https://cse-341-yf6e.onrender.com/",
+      "url": "http://localhost:8000/",
       "description": "the other server"
     }
   ],
@@ -145,8 +145,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "example": "insert id"
+              "type": "string"
             },
             "description": "Insert user id here to get data"
           }
@@ -175,14 +174,6 @@
               "type": "string"
             },
             "description": "Id of the contact"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Data needed to update a contact",
-            "schema": {
-              "$ref": "#/components/schemas/updateContacts"
-            }
           }
         ],
         "responses": {
@@ -191,6 +182,22 @@
           },
           "204": {
             "description": "No Content"
+          }
+        },
+        "requestBody": {
+          "description": "Data needed to update a contact",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateContacts"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/updateContacts"
+              }
+            }
           }
         }
       },
@@ -225,23 +232,23 @@
         "properties": {
           "firstName": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           },
           "lastName": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           },
           "email": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           },
           "favoriteColor": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           },
           "birthday": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           }
         },
         "xml": {
@@ -253,23 +260,23 @@
         "properties": {
           "firstName": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           },
           "lastName": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           },
           "email": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           },
           "favoriteColor": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           },
           "birthday": {
             "type": "string",
-            "example": "<String>"
+            "example": "any"
           }
         },
         "xml": {

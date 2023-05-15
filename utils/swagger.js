@@ -1,46 +1,46 @@
 const options = {
-  openapi: "3.0.0",  
-  autoBody: true
+  openapi: "3.0.0",
+  autoBody: true,
 };
 
 const swaggerAutogen = require("swagger-autogen")(options);
 
 const doc = {
   info: {
-    version: '1.0.0', 
+    version: "1.0.0",
     title: "My API CSE-341",
     description: "Api used for our CSE 341 class"
   },
   servers: [
     {
-      url: "http://localhost:8000/",
+      url: "https://cse-341-yf6e.onrender.com/",
       description: "main server"
     },
     {
-      url: "https://cse-341-yf6e.onrender.com/",
+      url: "http://localhost:8000/",
       description: "the other server"
     }
   ],
-  consumes: [], 
-  produces: [],  
+  consumes: [],
+  produces: [],
   host: "localhost:8000/",
   basePath: "",
   schema: ["https"],
 
   definitions: {
     contacts: {
-      firstName: "<String>",
-      lastName: "<String>",
-      email: "<String>",
-      favoriteColor: "<String>",
-      birthday: "<String>"
+      firstName: "any",
+      lastName: "any",
+      email: "any",
+      favoriteColor: "any",
+      birthday: "any"
     },
     updateContacts: {
-      firstName: "<String>",
-      lastName: "<String>",
-      email: "<String>",
-      favoriteColor: "<String>",
-      birthday: "<String>"
+      firstName: "any",
+      lastName: "any",
+      email: "any",
+      favoriteColor: "any",
+      birthday: "any"
     }
   }
 };
