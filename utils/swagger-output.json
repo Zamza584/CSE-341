@@ -5,7 +5,7 @@
     "description": "Api used for our CSE 341 class",
     "version": "1.0.0"
   },
-  "host": "localhost:8000/",
+  "host": "cse-341-yf6e.onrender.com/",
   "basePath": "",
   "schemes": [
     "http"
@@ -208,23 +208,23 @@
       "properties": {
         "firstName": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         },
         "lastName": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         },
         "email": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         },
         "favoriteColor": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         },
         "birthday": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         }
       }
     },
@@ -233,23 +233,23 @@
       "properties": {
         "firstName": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         },
         "lastName": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         },
         "email": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         },
         "favoriteColor": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         },
         "birthday": {
           "type": "string",
-          "example": "<String>"
+          "example": "any"
         }
       }
     }
