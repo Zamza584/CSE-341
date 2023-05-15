@@ -9,24 +9,24 @@ const doc = {
     title: "My API CSE-341",
     description: "Api used for our CSE 341 class"
   },
-  host: "localhost:8000/",
+  host: "cse-341-yf6e.onrender.com/",
   basePath: "",
   schema: ["https"],
 
   definitions: {
     contacts: {
-      firstName: "<String>",
-      lastName: "<String>",
-      email: "<String>",
-      favoriteColor: "<String>",
-      birthday: "<String>"
+      firstName: "any",
+      lastName: "any",
+      email: "any",
+      favoriteColor: "any",
+      birthday: "any"
     },
     updateContacts: {
-      firstName: "<String>",
-      lastName: "<String>",
-      email: "<String>",
-      favoriteColor: "<String>",
-      birthday: "<String>"
+      firstName: "any",
+      lastName: "any",
+      email: "any",
+      favoriteColor: "any",
+      birthday: "any"
 
     }
   }
