@@ -1,16 +1,18 @@
 const express = require("express");
 const app = express();
 const connectDb = require("./DB/mongodb");
+const cors = require("cors");
 connectDb();
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./utils/swagger-output.json');
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./utils/swagger-output.json");
 
 const port = process.env.PORT || 8000;
 
 app.use(express.json({ extended: false }));
+app.use(cors({ origin: "*", credentials: true }));
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
 app.use("/contacts", require("./routes/contacts"));
